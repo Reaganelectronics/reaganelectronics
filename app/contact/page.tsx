@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppChat } from "@/components/whatsapp-chat"
+import { ConfirmationModal } from "@/components/confirmation-modal"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -19,6 +20,7 @@ export default function ContactPage() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showConfirmation, setShowConfirmation] = useState(false)
   const { toast } = useToast()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -53,10 +55,8 @@ export default function ContactPage() {
       })
 
       if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you as soon as possible.",
-        })
+        // Show confirmation modal instead of toast
+        setShowConfirmation(true)
         setFormData({ name: "", email: "", message: "" })
       } else {
         throw new Error("Failed to send message")
@@ -286,6 +286,17 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={showConfirmation}
+        onClose={() => setShowConfirmation(false)}
+        type="contact"
+        data={{
+          name: formData.name,
+          email: formData.email,
+        }}
+      />
 
       <Footer />
       <WhatsAppChat />

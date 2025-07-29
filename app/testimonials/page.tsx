@@ -68,6 +68,78 @@ const testimonials = [
     text: "The best electronics deal I've ever found! My AirPods 4 arrived in perfect condition and the price was incredible. The team was very responsive to my questions.",
     product: "AirPods 4",
   },
+  {
+    id: 9,
+    name: "Jennifer Martinez",
+    location: "Colorado, USA",
+    rating: 5,
+    text: "Ordered an iPhone 15 Plus and couldn't be more satisfied. The device came with all original accessories and packaging. Reagan Electronics has earned a customer for life!",
+    product: "iPhone 15 Plus",
+  },
+  {
+    id: 10,
+    name: "Christopher Lee",
+    location: "Nevada, USA",
+    rating: 5,
+    text: "I've been shopping with Reagan Electronics for over a year now. Every purchase has been flawless - from iPhones to AirPods. Their midyear auction prices are simply unmatched!",
+    product: "iPhone 14 Plus",
+  },
+  {
+    id: 11,
+    name: "Amanda Foster",
+    location: "Georgia, USA",
+    rating: 5,
+    text: "The iPad mini I purchased works perfectly for my design work. Arrived faster than expected and the condition was exactly as described. Excellent value for money!",
+    product: "iPad mini 5th Gen",
+  },
+  {
+    id: 12,
+    name: "Daniel Wright",
+    location: "North Carolina, USA",
+    rating: 5,
+    text: "Reagan Electronics made buying my first iPhone so easy. The payment process was secure, shipping was fast, and the phone is absolutely perfect. Highly recommended!",
+    product: "iPhone 12 Pro",
+  },
+  {
+    id: 13,
+    name: "Rachel Green",
+    location: "Michigan, USA",
+    rating: 5,
+    text: "I saved over $400 on my iPhone 13 mini! The device is in pristine condition and came with a warranty. The customer support team was incredibly helpful throughout.",
+    product: "iPhone 13 mini",
+  },
+  {
+    id: 14,
+    name: "Kevin Brown",
+    location: "Ohio, USA",
+    rating: 5,
+    text: "Bought AirPods 2nd Gen for my workout routine. Sound quality is amazing and they fit perfectly. The discount was so good I thought it was too good to be true, but it's legit!",
+    product: "AirPods 2nd Gen",
+  },
+  {
+    id: 15,
+    name: "Stephanie Davis",
+    location: "Virginia, USA",
+    rating: 5,
+    text: "The iPhone 16 Pro I ordered came in the exact color I wanted. Everything was authentic, including the box and accessories. Reagan Electronics exceeded all my expectations!",
+    product: "iPhone 16 Pro",
+  },
+  {
+    id: 16,
+    name: "Mark Wilson",
+    location: "Pennsylvania, USA",
+    rating: 5,
+    text: "As a tech enthusiast, I was impressed by the quality and authenticity of my iPhone 11 Pro Max. The 73% discount was incredible, and the device works like new!",
+    product: "iPhone 11 Pro Max",
+  },
+  {
+    id: 17,
+    name: "Nicole Taylor",
+    location: "Tennessee, USA",
+    rating: 5,
+    text: "The VR headset has provided hours of entertainment for my family. Great build quality and the price was unbeatable. Shipping was fast and packaging was secure.",
+    product: "Elecom VR Headset",
+  },
 ]
 
 export default function TestimonialsPage() {
@@ -90,7 +162,7 @@ export default function TestimonialsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">10,000+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">15,000+</div>
               <div className="text-gray-600">Happy Customers</div>
             </div>
             <div>
@@ -102,7 +174,7 @@ export default function TestimonialsPage() {
               <div className="text-gray-600">Satisfaction Rate</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">50,000+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">75,000+</div>
               <div className="text-gray-600">Products Delivered</div>
             </div>
           </div>

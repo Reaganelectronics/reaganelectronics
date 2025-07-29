@@ -5,7 +5,18 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
+    // Validate API key
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not configured")
+      return NextResponse.json({ error: "Email service not configured" }, { status: 500 })
+    }
+
     const orderData = await request.json()
+
+    // Validate required order data
+    if (!orderData.orderNumber || !orderData.customerInfo || !orderData.items) {
+      return NextResponse.json({ error: "Invalid order data" }, { status: 400 })
+    }
 
     const emailContent = `
   <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; background-color: #f9fafb; padding: 20px;">

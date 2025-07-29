@@ -5,7 +5,24 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
+    // Validate API key
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not configured")
+      return NextResponse.json({ error: "Email service not configured" }, { status: 500 })
+    }
+
     const { name, email, message } = await request.json()
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ error: "Invalid email format" }, { status: 400 })
+    }
 
     const emailContent = `
       <h2>New Contact Form Submission</h2>
